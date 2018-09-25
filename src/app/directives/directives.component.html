@@ -1,0 +1,36 @@
+<div *ngIf="items.length>0; else noItems">
+  Items list
+</div>
+
+<ng-template #noItems>
+  No Items
+</ng-template>
+
+
+<hr />
+<p>*ngIf doesn not renders html when condition is false..</p>
+<div *ngIf="items.length>0; then conditionTrue else conditionFalse"></div>
+<ng-template #conditionTrue>
+  True block
+</ng-template>
+<ng-template #conditionFalse>
+  False block
+</ng-template>
+
+
+<hr />
+<p>renders but hides...keyword inside box bracket is dom-property</p>
+<div [hidden]="items.length<=0">Items List</div>
+<div [hidden]="items.length>0">No Items</div>
+
+<hr />
+
+<ul class="nav nav-pills">
+  <li [class.acive]="viewMode=='map'"><a (click)="viewMode='map'">Map View</a></li>
+  <li [class.acive]="viewMode=='list'"><a (click)="viewMode='list'">List View</a></li>
+</ul>
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">Map View Content</div>
+  <div *ngSwitchCase="'list'">List View Content</div>
+  <div *ngSwitchDefault>Default</div>
+</div>

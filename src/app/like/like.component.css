@@ -1,0 +1,8 @@
+.highlighted{
+	
+}
+
+.glyphicon-heart:hover {
+	color:red;
+	cursor: pointer;
+}

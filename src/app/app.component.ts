@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular';
+
+  rating = {
+    value: 5
+  };
+
+  onChange($event) {
+    //console.log("APP Component");
+    console.log($event);
+  }
+
 }

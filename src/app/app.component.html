@@ -1,9 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<h1>
+<h5>
   Welcome to {{ title }}!
-</h1>
+</h5>
+<hr />
 
-<app-courses></app-courses>
+
+
+<app-rating [value]="12312" (change)="onChange($event)"></app-rating>
+
+
+<!--<app-courses></app-courses>-->
 
 <router-outlet></router-outlet>

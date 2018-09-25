@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
 import { SummaryPipe } from './summary.pipe';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
-    SummaryPipe
+    SummaryPipe,
+    RatingComponent
   ],
   imports: [
     BrowserModule,

@@ -8,13 +8,19 @@ import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
 import { SummaryPipe } from './summary.pipe';
 import { RatingComponent } from './rating/rating.component';
+import { PanelComponent } from './panel/panel.component';
+import { LikeComponent } from './like/like.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
     SummaryPipe,
-    RatingComponent
+    RatingComponent,
+    PanelComponent,
+    LikeComponent,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,

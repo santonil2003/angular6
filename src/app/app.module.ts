@@ -11,6 +11,7 @@ import { RatingComponent } from './rating/rating.component';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { InputFormatDirective } from './input-format.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DirectivesComponent } from './directives/directives.component';
     RatingComponent,
     PanelComponent,
     LikeComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    InputFormatDirective
   ],
   imports: [
     BrowserModule,

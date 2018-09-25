@@ -26,11 +26,42 @@
 <hr />
 
 <ul class="nav nav-pills">
-  <li [class.acive]="viewMode=='map'"><a (click)="viewMode='map'">Map View</a></li>
-  <li [class.acive]="viewMode=='list'"><a (click)="viewMode='list'">List View</a></li>
+  <li [class.active]="viewMode=='map'"><a (click)="viewMode='map'">Map View</a></li>
+  <li [class.active]="viewMode=='list'"><a (click)="viewMode='list'">List View</a></li>
+  <li [ngClass]="{'active':viewMode=='map'}"><a (click)="viewMode='map'">Map View</a></li>
 </ul>
 <div [ngSwitch]="viewMode">
   <div *ngSwitchCase="'map'">Map View Content</div>
   <div *ngSwitchCase="'list'">List View Content</div>
   <div *ngSwitchDefault>Default</div>
 </div>
+
+<hr />
+<button (click)="addNew()" [ngStyle]="{'backgroundColor':'red'}">Add</button>
+<ul>
+  <li *ngFor="let item of items">
+    {{item}}
+    <button (click)="removeItem(item)">Remove</button>
+  </li>
+</ul>
+
+<hr />
+<p>track by</p>
+
+<button (click)="loadCourses()">ReLoad</button>
+<ul>
+  <li *ngFor="let course of courses">
+    {{course.name}}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let course of courses; trackBy: trackCourse()">
+    {{course.name}}
+  </li>
+</ul>
+
+<hr />
+<p>Custom derictives</p>
+
+<input type="text" appInputFormat [format]="'lowercase'">

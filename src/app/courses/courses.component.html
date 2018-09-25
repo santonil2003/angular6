@@ -1,0 +1,45 @@
+<b>{{getTitle() | summary}}</b>
+
+<input type="text" value="{{title | summary:10}}" />
+
+
+<input type="text" [value]="title" />
+
+<input type="text" [value]="title" />
+<p [style.backgroundColor]="bgColor">
+  courses works!
+</p>
+
+<table border="1">
+  <tr>
+    <td>A</td>
+    <td>B</td>
+  </tr>
+  <tr>
+    <td [attr.colspan]="colSpan">123</td>
+  </tr>
+</table>
+
+<button class="btn btn-primary" [class.ram]="isActive" (click)="onSave($event)"> btn</button>
+<ul style="display: none;">
+  <li *ngFor="let course of courses">{{course}}</li>
+</ul>
+
+
+<h1>Enter click event</h1>
+
+<input type="text" (keyup.enter)="onEnter($event)" />
+
+<input type="text" (keyup)="onEnter($event)" />
+
+<h2>template variable</h2>
+<input type="text" #email (keyup)="templateVar(email.value)" />
+
+<h2>Property binding</h2>
+<input type="text" [value]="title" (keyup)="onEmailKeyUp()" />
+
+<h2>two way binding</h2>
+<input type="text" [value]="title" (keyup)="title=$event.target.value;onEmailKeyUp()" />
+
+
+<input [(ngModel)]="title" />

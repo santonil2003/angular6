@@ -17,6 +17,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { LoginComponent } from './login/login.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NewCourseFormComponentComponent } from './new-course-form-component/new-course-form-component.component';
+import { PostComponentComponent } from './post-component/post-component.component';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -32,13 +34,15 @@ import { NewCourseFormComponentComponent } from './new-course-form-component/new
     ReactiveFormComponent,
     LoginComponent,
     SignupFormComponent,
-    NewCourseFormComponentComponent
+    NewCourseFormComponentComponent,
+    PostComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [
     CoursesService

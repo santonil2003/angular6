@@ -1,6 +1,8 @@
-import { CoursesService } from './courses.service';
+import { Observable } from 'rxjs/Observable';
+import { PostService } from './services/post.service';
+import { CoursesService } from './services/courses.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +21,10 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NewCourseFormComponentComponent } from './new-course-form-component/new-course-form-component.component';
 import { PostComponentComponent } from './post-component/post-component.component';
 import { HttpModule } from '@angular/http';
+import { AppErrorHandler } from './common/app-error-handler';
+
+
+
 
 @NgModule({
   declarations: [
@@ -45,7 +51,11 @@ import { HttpModule } from '@angular/http';
     HttpModule
   ],
   providers: [
-    CoursesService
+    CoursesService,
+    PostService,
+    {
+      provide: ErrorHandler, useClass: AppErrorHandler // tell angular to use AppErrorHandler instead of ErrorHandler through out the application
+    }
   ],
   bootstrap: [AppComponent]
 })

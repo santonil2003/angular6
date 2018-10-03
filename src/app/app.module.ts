@@ -1,4 +1,3 @@
-import { Observable } from 'rxjs/Observable';
 import { PostService } from './services/post.service';
 import { CoursesService } from './services/courses.service';
 import { BrowserModule } from '@angular/platform-browser';

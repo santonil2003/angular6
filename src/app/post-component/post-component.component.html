@@ -3,6 +3,11 @@
 <ul class="list-group">
   <li *ngFor="let post of posts" class="list-group-item">
     {{post.title}}
-    <button (click)="deletePost(post)">Delete</button>
+    <span class="pull-right">
+      <button (click)="deletePost(post)">Delete</button> |
+      <a [routerLink]="['/post', post.id]" class="btn btn-primary btn-sm">View</a>
+
+    </span>
+
   </li>
 </ul>

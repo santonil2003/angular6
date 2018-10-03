@@ -55,6 +55,10 @@ export class PostComponentComponent implements OnInit {
   }
 
   deletePost(post) {
+
+    if (!confirm("Are yu sure?")) {
+      return;
+    }
     let index = this.posts.indexOf(post);
     this.posts.splice(index, 1);
 
@@ -70,6 +74,10 @@ export class PostComponentComponent implements OnInit {
         this.posts.splice(index, 0, post);
       }
     );
+
+  }
+
+  viewPost(post) {
 
   }
 

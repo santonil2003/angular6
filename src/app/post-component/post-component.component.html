@@ -6,7 +6,7 @@
     <span class="pull-right">
       <button (click)="deletePost(post)">Delete</button> |
       <a [routerLink]="['/post', post.id, post.title]" class="btn btn-primary btn-sm">View</a>
-
+      <button (click)="viewPost(post)">View Post</button>
     </span>
 
   </li>

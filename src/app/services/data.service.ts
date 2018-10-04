@@ -17,6 +17,10 @@ export class DataService {
 		return this.http.get(this.apiUrl).pipe(map(response => response.json()));
 	}
 
+	get(data) {
+		return this.http.get(this.apiUrl + '/' + data.id).pipe(map(response => response.json()));
+	}
+
 	create(data) {
 		return this.http.post(this.apiUrl, JSON.stringify(data)).pipe(map(response => response.json()));
 	}

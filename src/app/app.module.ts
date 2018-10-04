@@ -63,11 +63,11 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent },
+      { path: 'home', component: HomeComponent },
       { path: 'followers/:username', component: GithubProfileComponent },
       { path: 'followers', component: GithubFollowersComponent },
       { path: 'posts', component: PostComponentComponent },
-      { path: 'post/:id', component: PostDetailComponent },
+      { path: 'post/:id/:title', component: PostDetailComponent },
       { path: '**', component: NotFoundComponent }
     ])
   ],

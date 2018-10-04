@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../services/post.service';
 import { retry } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 
 
@@ -17,7 +18,7 @@ export class PostComponentComponent implements OnInit {
   posts: any[];
 
 
-  constructor(private service: PostService) {
+  constructor(private service: PostService, private router: Router) {
 
   }
 
@@ -78,7 +79,7 @@ export class PostComponentComponent implements OnInit {
   }
 
   viewPost(post) {
-
+    this.router.navigate(['/post',post.id]);
   }
 
 }
